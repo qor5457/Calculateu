@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalibrationTool", "CalibrationTool\CalibrationTool.csproj", "{0923AED0-8AA4-4EFF-B468-55829425BDA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalibrationToolLibrary", "CalibrationToolLibrary\CalibrationToolLibrary.csproj", "{FED8B5B7-F4F8-413F-8357-E6BF8AF95371}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0923AED0-8AA4-4EFF-B468-55829425BDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0923AED0-8AA4-4EFF-B468-55829425BDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0923AED0-8AA4-4EFF-B468-55829425BDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0923AED0-8AA4-4EFF-B468-55829425BDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED8B5B7-F4F8-413F-8357-E6BF8AF95371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED8B5B7-F4F8-413F-8357-E6BF8AF95371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED8B5B7-F4F8-413F-8357-E6BF8AF95371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED8B5B7-F4F8-413F-8357-E6BF8AF95371}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7EC2CEF-076A-49D8-95D8-727FD71888F8}
+	EndGlobalSection
+EndGlobal

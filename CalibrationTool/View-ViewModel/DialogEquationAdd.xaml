@@ -1,0 +1,143 @@
+﻿<Window x:Class="CalibrationTool.View_ViewModel.DialogEquationAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:CalibrationTool.View_ViewModel"
+        mc:Ignorable="d"
+        Title="Window1" Height="575" Width="660" Opacity="0.8" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterOwner">
+    <Grid  Background="#333333">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="415"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="492"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="140"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="190"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="SpRb" Grid.Row="0" Grid.Column="0">
+                <RadioButton x:Name="Rb1" Height="60" Content="1차 방정식"  Style="{StaticResource BlackRadioButton}" Command="{Binding Path=BtnRadioButtonClick}" CommandParameter="2"/>
+                <RadioButton x:Name="Rb2" Height="60" Content="2차 방정식" Style="{StaticResource BlackRadioButton}" Command="{Binding Path=BtnRadioButtonClick}" CommandParameter="3"/>
+                <RadioButton x:Name="Rb3" Height="60" Content="3차 방정식" Style="{StaticResource BlackRadioButton}" Command="{Binding Path=BtnRadioButtonClick}" CommandParameter="4"/>
+                <RadioButton x:Name="Rb4" Height="60" Content="4차 방정식" Style="{StaticResource BlackRadioButton}" Command="{Binding Path=BtnRadioButtonClick}" CommandParameter="5"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <DockPanel Height="54" Width="252">
+                    <Border Height="46" Width="46" Background="#000000" Margin="1">
+                        <TextBlock Text="A" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                    <Border Height="46" Background="#333333" Margin="1">
+                        <TextBox Background="#333333" BorderBrush="#333333" Text="{Binding Value[0]}" TextAlignment="Left" Margin="10" VerticalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                </DockPanel>
+                <DockPanel Height="54" Width="252">
+                    <Border Height="46" Width="46" Background="#000000" Margin="1">
+                        <TextBlock Text="B" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                    <Border Height="46" Background="#333333" Margin="1">
+                        <TextBox Background="#333333" BorderBrush="#333333" Text="{Binding Value[1]}" TextAlignment="Left" Margin="10" VerticalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                </DockPanel>
+                <DockPanel Height="54" Width="252">
+                    <Border Height="46" Width="46" Background="#000000" Margin="1">
+                        <TextBlock Text="C" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                    <Border Height="46" Background="#333333" Margin="1">
+                        <TextBox Background="#333333" BorderBrush="#333333" Text="{Binding Value[2]}" TextAlignment="Left" Margin="10" VerticalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                    <DockPanel.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb1}" Value="False">
+                                    <Setter Property="DockPanel.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb1}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DockPanel.Style>
+                </DockPanel>
+                <DockPanel Height="54" Width="252">
+                    <Border Height="46" Width="46" Background="#000000" Margin="1">
+                        <TextBlock Text="D" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                    <Border Height="46" Background="#333333" Margin="1">
+                        <TextBox Background="#333333" BorderBrush="#333333" Text="{Binding Value[3]}" TextAlignment="Left" Margin="10" VerticalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                    <DockPanel.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb1}" Value="False">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb1}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb2}" Value="False">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb2}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb3}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb4}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DockPanel.Style>
+                </DockPanel>
+                <DockPanel Height="54" Width="252">
+                    <Border Height="46" Width="46" Background="#000000" Margin="1">
+                        <TextBlock Text="E" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                    <Border Height="46" Background="#333333" Margin="1">
+                        <TextBox Background="#333333" BorderBrush="#333333" Text="{Binding Value[4]}" TextAlignment="Left" Margin="10" VerticalAlignment="Center" Foreground="#ECECEC" FontSize="13"/>
+                    </Border>
+                    <DockPanel.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb1}" Value="False">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb1}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb2}" Value="False">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb2}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb3}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsChecked, ElementName=Rb4}" Value="True">
+                                    <Setter Property="DockPanel.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DockPanel.Style>
+                </DockPanel>
+            </StackPanel>
+            <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Content="취소" Width="97" Height="60"  Style="{StaticResource ResourceKey=RedButton}" Command="{Binding BtnCancel}"/>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Content="방정식 추가" Width="150" Height="60"  Style="{StaticResource ResourceKey=SkyBlueButton}" Command="{Binding BtnEquationAdd}"/>
+        </Grid>
+    </Grid>
+</Window>
+
